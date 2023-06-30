@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bl2r7ww5pvp0p"]
+
+[node name="RemoteMonitor" type="VBoxContainer"]
+custom_minimum_size = Vector2(490, 315)
+offset_right = 688.0
+offset_bottom = 576.0
+
+[node name="Terminal" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+
+[node name="TerminalInput" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Command..."

@@ -1,0 +1,115 @@
+[gd_scene load_steps=4 format=3 uid="uid://bohr8sh3bsxq2"]
+
+[ext_resource type="Script" path="res://Client/UserInterface.gd" id="1_admjr"]
+[ext_resource type="Texture2D" uid="uid://bb2ck4teefkce" path="res://SOURCES/MAP.png" id="2_j86em"]
+[ext_resource type="PackedScene" uid="uid://bl2r7ww5pvp0p" path="res://Client/Interface/remote_monitor.tscn" id="3_g0bx5"]
+
+[node name="UserInterface" type="VBoxContainer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_admjr")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="HBox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="MiniMap" type="TextureRect" parent="HBox/Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+offset_top = 40.0
+offset_right = 300.0
+offset_bottom = 340.0
+texture = ExtResource("2_j86em")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="QuickIntrusionActions" type="VBoxContainer" parent="HBox/Control"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 360.0
+offset_right = 296.0
+offset_bottom = 576.0
+theme_override_constants/separation = 5
+
+[node name="PowerOff" type="Button" parent="HBox/Control/QuickIntrusionActions"]
+layout_mode = 2
+text = "POWER OFF"
+
+[node name="EthernetOff" type="Button" parent="HBox/Control/QuickIntrusionActions"]
+layout_mode = 2
+text = "ETHERNET OFF"
+
+[node name="ClosePorts" type="Button" parent="HBox/Control/QuickIntrusionActions"]
+layout_mode = 2
+text = "CLOSE PORTS"
+
+[node name="EXAMPLES" type="Button" parent="HBox/Control/QuickIntrusionActions"]
+layout_mode = 2
+text = "EXAMPLE BUTTON"
+
+[node name="Label" type="Label" parent="HBox/Control"]
+layout_mode = 2
+offset_right = 296.0
+offset_bottom = 40.0
+text = "Network-Mapper
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RemoteViewer" type="Control" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBox" type="VBoxContainer" parent="HBox/RemoteViewer"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 688.0
+offset_bottom = 592.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="RemoteTitle" type="Label" parent="HBox/RemoteViewer/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "RTC: 192.168.0.1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RemoteMonitor" parent="HBox/RemoteViewer/VBox" instance=ExtResource("3_g0bx5")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBox"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="HBox/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+auto_height = true
+item_count = 1
+item_0/text = "Test"
+
+[node name="TaskBar" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="SUPER_BUTTON" type="Button" parent="TaskBar"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 43.0
+offset_bottom = 39.0
+text = "|||"
+
+[connection signal="item_clicked" from="HBox/ScrollContainer/ItemList" to="." method="_on_item_list_item_clicked"]

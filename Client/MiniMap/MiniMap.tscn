@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw5bkmghxj6mr"]
+
+[ext_resource type="Texture2D" uid="uid://bb2ck4teefkce" path="res://SOURCES/MAP.png" id="1_l1phh"]
+
+[node name="MiniMap" type="Sprite2D"]
+scale = Vector2(1.01157, 1.01333)
+texture = ExtResource("1_l1phh")
+centered = false

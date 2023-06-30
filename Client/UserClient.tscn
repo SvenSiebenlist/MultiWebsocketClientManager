@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://psk5ldurs2ea"]
+
+[ext_resource type="Script" path="res://Client/UserClient.gd" id="1_j3ndf"]
+[ext_resource type="PackedScene" uid="uid://bohr8sh3bsxq2" path="res://Client/Interface/user_interface.tscn" id="2_3ynop"]
+
+[node name="UserClient" type="Window"]
+size = Vector2i(1150, 650)
+script = ExtResource("1_j3ndf")
+
+[node name="UserInterface" parent="." instance=ExtResource("2_3ynop")]
+unique_name_in_owner = true

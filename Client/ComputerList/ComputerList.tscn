@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c0ug37x6idc3q"]
+
+[node name="ComputerList" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 300.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 300.0
+offset_bottom = 298.0
+
+[node name="ItemList" type="ItemList" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+auto_height = true
+item_count = 1
+item_0/text = "Test"

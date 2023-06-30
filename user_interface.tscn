@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://creh7icg1ym7b"]
+
+[ext_resource type="Texture2D" uid="uid://bb2ck4teefkce" path="res://SOURCES/MAP.png" id="1_mtfgk"]
+
+[node name="UserInterface" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MiniMap" type="TextureRect" parent="HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_mtfgk")
+stretch_mode = 2
+
+[node name="ComputerControl" type="Control" parent="HBox"]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBox/ComputerControl"]
+layout_mode = 0
+offset_right = 592.0
+offset_bottom = 603.0
+alignment = 1
+
+[node name="Label" type="Label" parent="HBox/ComputerControl/VBoxContainer"]
+layout_mode = 2
+text = "RTC: 192.168.0.1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ComputerList" type="Control" parent="HBox"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBox/ComputerList"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 244.0
+offset_bottom = 603.0
+
+[node name="ItemList" type="ItemList" parent="HBox/ComputerList/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+auto_height = true
+item_count = 1
+item_0/text = "Test"
+
+[node name="TaskBar" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="SUPER_BUTTON" type="Button" parent="TaskBar"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 43.0
+offset_bottom = 39.0
+text = "|||"
